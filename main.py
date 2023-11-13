@@ -19,9 +19,17 @@ class Student(Person):
             print(subject)
 
 class Teacher(Person):
-    def __init__(self, name, age, gender, employee_id):
+    def __init__(self, name, age, gender, __employee_id):
         super().__init__(name, age, gender)
-        self.employee_id = employee_id
+        self.__employee_id = __employee_id
+
+    def get_employee_id(self):
+        return self.__employee_id
+
+    def add_grades(self, student, grades):
+        print(f'Вчитель {self.name} виставив оцінку для {student.name}')
+        for subject, grade in grades.items():
+            print(f"по предмету {subject} оцінка {grade}")
 
 student1 = Student("Oleg", 15, "male", 34344)
 student2 = Student("Olga", 16, "female", 342435)
