@@ -35,3 +35,7 @@ student1 = Student("Oleg", 15, "male", 34344)
 student2 = Student("Olga", 16, "female", 342435)
 print(f"Студент на ім'я {student1.name} з id:{student1.get_student_id()}")
 student1.display_subject(['Math', 'Science', "History"])
+
+teacher1 = Teacher('пан Михайло', 35, "male", 3456789)
+teacher1.add_grades(student1, {"Math": "A", "Science": "B", "History": "E"})
+
