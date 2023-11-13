@@ -1,12 +1,10 @@
-class Parent:
-    def __init__(self, name):
+#практика
+class Person:
+    def __init__(self, name, age, gender):
         self.name = name
-        print("Корисна річ")
-class Child(Parent):
-    def __init__(self, name, additional_info):
-        #self.name = name
-        super().__init__(name)#виклик конструктора батьківського класу
-        self.additional_info = additional_info
-
-child = Child("Oleg", "informaion")
-print(child.name, child.additional_info)
+        self.age = age
+        self.gender = gender
+class Student(Person):
+    def __init__(self, name, age, gender, student_id):
+        super().__init__(self, name, age, gender)
+        self.student_id = student_id
