@@ -21,11 +21,14 @@ class Clock:
 
 class AnalogClock(Clock):
     def display_times(self):
+        print("Analog Clock")
         super().display_times()
 
 class DigitalClock(Clock):
     def display_times(self):
+        print("Digital Clock")
         super().display_times()
+
 
 analog_clock = AnalogClock(1, 34)
 digital_clock = DigitalClock(15, 43)
