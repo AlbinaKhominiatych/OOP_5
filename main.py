@@ -4,7 +4,7 @@ class Animal:
         print("Гучно оре")
 class Dog(Animal):
     def sound(self):
-        Animal.sound(self)
+        super().sound()
         print("Гавкати")
 dog = Dog()
 dog.sound()
