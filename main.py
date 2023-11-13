@@ -1,36 +1,40 @@
 """
-Завдання 4
-Створіть базовий клас Clock, який містить атрибути
-години та хвилини. Від цього базового класу
-успадковуйте два класи: AnalogClock та DigitalClock.
-Клас AnalogClock повинен мати метод display_time,
-який виводить поточний час у форматі
-"години:хвилини". Клас DigitalClock повинен мати
-метод display_time, який виводить поточний час у
-цифровому форматі "гг:хх".
-Створіть об'єкти кожного класу та виведіть
-поточний час за допомогою методу display_time.
+Завдання 3
+Створіть базовий клас «Тварина» та похідні класи:
+«Тигр», «Крокодил», «Кенгуру». Встановіть за допомогою
+конструктора ім’я кожної тварини та її характеристики.
+Створіть для кожного класу необхідні методи та поля.
 """
-class Clock:
-    def __init__(self, hours, minutes):
-        self.hours = hours
-        self.minutes = minutes
+class Animal:
+    def __init__(self, name, species, sound):
+        self.name = name
+        self.sound = sound
+        self.species = species
 
-    def display_times(self):
-        print(f'{self.hours:02d}:{self.minutes:02d}')
+    def make_sound(self):
+        print(f'{self.species} {self.name} каже {self.sound}')
+    def move(self):
+        print(f'{self.species} {self.name} рухатися')
+    def swim(self):
+        print(f"{self.species} {self.name} плаває")
 
-class AnalogClock(Clock):
-    def display_times(self):
-        print("Analog Clock")
-        super().display_times()
+class Tiger(Animal):
+    def __init__(self, name):
+        super().__init__(name, "Tiger", "Roar")
 
-class DigitalClock(Clock):
-    def display_times(self):
-        print("Digital Clock")
-        super().display_times()
+    def swim(self):
+        super().swim()
 
+class Crocodie(Animal):
+    def __init__(self, name):
+        super().__init__(name, "Crocodie", "Rrrrrrrr")
 
-analog_clock = AnalogClock(1, 34)
-digital_clock = DigitalClock(15, 43)
-analog_clock.display_times()
-digital_clock.display_times()
+    def swim(self):
+        super().swim()
+
+tiger = Tiger("Шерхан")
+crocodie = Crocodie("Локі")
+crocodie.swim()
+tiger.swim()
+crocodie.make_sound()
+
